@@ -1,4 +1,4 @@
-import { Select, MenuItem, InputLabel } from '@mui/material';
+import { Select, MenuItem } from '@mui/material';
 
 const sortOptions = {
   1: 'Recommended',
@@ -7,7 +7,7 @@ const sortOptions = {
   4: 'Largest Discount',
 };
 
-const SortSelector = ({ currentSort }) => {
+const SortSelector = ({ currentSort, setCurrentSort }) => {
   return (
     <div
       style={{
@@ -20,7 +20,7 @@ const SortSelector = ({ currentSort }) => {
         alignItems: 'center',
       }}>
       <div>Sort By</div>
-      <Select value={currentSort} style={{ padding: '3px', width: '200px' }}>
+      <Select value={currentSort} onChange={(e) => setCurrentSort(e.target.value)} style={{ padding: '0px', width: '200px' }}>
         {Object.keys(sortOptions).map((key) => (
           <MenuItem key={key} value={key}>
             {sortOptions[key]}

@@ -1,7 +1,6 @@
 import ProductCard from './ProductCard';
 
 const ProductsList = ({ productData }) => {
-  console.log(productData);
   return (
     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '40px' }}>
       {productData &&
