@@ -1,6 +1,5 @@
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import FilterCategory from './FilterCategory';
-import { useEffect } from 'react';
 
 const FilterBar = ({ filterData }) => {
   return (

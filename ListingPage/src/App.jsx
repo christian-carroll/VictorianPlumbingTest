@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import FilterBar from './components/FilterBar';
-import ProductsList from './components/ProductsList';
+import FilterBar from './components/FilterBy/FilterBar';
+import ProductsList from './components/Products/ProductsList';
+import SortSelector from './components/SortSelector';
 import './App.css';
 
 function App() {
@@ -46,7 +47,10 @@ function App() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 4fr', gridGap: '25px' }}>
       <FilterBar filterData={data.facets} />
-      <ProductsList productData={data.products} />
+      <div style={{ gridTemplateRows: '100px 1fr', display: 'grid', gridGap: '25px' }}>
+        <SortSelector currentSort={0} />
+        <ProductsList productData={data.products} />
+      </div>
     </div>
   );
 }
